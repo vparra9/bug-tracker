@@ -8,6 +8,7 @@ const bugPriority = document.getElementById("bugPriority");
 const bugStatus = document.getElementById("bugStatus");
 const emptyMessage = document.getElementById("emptyMessage");
 
+
 bugForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -16,6 +17,12 @@ bugForm.addEventListener("submit", function (event) {
     const priorityValue = bugPriority.value;
     const statusValue = bugStatus.value;
 
+    /*Validation so empyty bugs cannot be submitted*/
+
+    if (titleValue.trim() === "" || descriptionValue.trim() === "") {
+    alert("Please enter both a bug title and description.");
+    return;
+    }
     console.log(titleValue);
     console.log(descriptionValue);
     console.log(priorityValue);
@@ -28,10 +35,21 @@ bugForm.addEventListener("submit", function (event) {
 
     bugCard.innerHTML = `
         <h3>${titleValue}</h3>
-        <p>#{descriptionValue}<p>
-        <p><strong>Priority:</strong>${priorityvalue}</p>
+        <p>${descriptionValue}</p>
+        <p><strong>Priority:</strong> ${priorityValue}</p>
         <p><strong>Status:</strong> ${statusValue}</p>
+        <button class="delete-button">Delete</button>
     `;
+
+    const deleteButton = bugCard.querySelector(".delete-button");
+
+    deleteButton.addEventListener("click", function () {
+        bugCard.remove();
+
+        if (bugList.querySelectorAll(".bug-card").length === 0) {
+            emptyMessage.style.display = "block";
+        }
+    });
 
     bugList.appendChild(bugCard);
     bugForm.reset();
