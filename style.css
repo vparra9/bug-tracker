@@ -1,0 +1,229 @@
+
+/*==================================
+    GLOBAL RESET
+==================================*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/*==================================
+    HEADER COMPONENT
+==================================*/
+
+.page-header{
+    background-color: black;
+    border-bottom: 1px solid #e2e8f0;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 30px;
+    width: 75%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: 10px;
+    padding: 3px 35px; 
+}
+
+/* Header Text and Branding */
+
+.page-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin: 0;
+    font-size: larger;
+    margin-left: 40px;
+    transform: translateY(-15px); /*Allows text to align with logo*/
+}
+
+.app-logo{
+    width: 32px;
+    height: 32px;
+    object-fit: contain; /*Prevents logo from stretching*/
+    transform: translateY(18px); /*Shifts logo down to align with text as well*/
+}
+
+/*==================================
+    ADD NEW BUG COMPONENT
+==================================*/
+
+.add-bug{
+    background-color: rgba(211, 211, 211, 0.21);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width:72%;
+    margin-left: 40px;
+    margin-right: 30px;
+    padding-bottom: 35px;
+    padding-left: 5px;
+    
+}
+
+
+
+.add-bug h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    transform: translateX(18px);
+    margin-bottom: 10px;
+}
+
+/*==================================
+    FORM WRAPPER AND CONTAINER
+==================================*/
+
+.bug-form-section{
+    max-width: 1100px;
+    margin:40px auto;
+    padding:25px;
+    background-color:white;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+}
+
+.bug-form-section h2{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/*==================================
+    FORM FIELD AND INPUT FLEXBOX LAYOUT
+==================================*/
+
+.bug-form {
+    display:flex;
+    align-items: flex-end;
+    gap:20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+}
+
+.form-group label {
+    font-weight: 600;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    
+}
+
+/* Global input field styles */
+.form-group input,
+.form-group textarea,
+.form-group select {
+   padding:12px;
+   border: 1px solid #cccccc;
+   border-radius: 8px;
+   background-color: white;
+   font-size: 13px;
+   height:50px;
+   box-sizing: border-box;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+/* --- Specific Field Sizing --- */
+.form-group input {
+    width:220px;
+}
+
+.description-group textarea{
+    width:280px;
+    height: 48px;
+    resize: vertical; /*Allows users to drag-stretch the height but locks the width */
+}
+
+.form-group select {
+    width: 120px;
+    border-radius: 8px;
+    background-color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #cccccc;
+
+}
+/*Button*/
+
+.bug-form button{
+    padding: 17px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+/* Action hover state for button */
+.bug-form button:hover {
+    background-color: #1d4ed8;
+}
+
+/*==================================
+    ADD ALL BUG COMPONENT
+==================================*/
+
+/*Customizes header, drop down menu, etc*/
+.all-bugs h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    transform: translateX(64px);
+    margin-top: 10px;
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 15px 64px 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+.filter-section select {
+    width: 73px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+/*Lists bugs and handles empty message*/
+
+.bugs-section {
+    width:72%;
+    margin: 25px 0 0 35px;
+}
+
+.bugs-section h2 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.bugs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#emptyMessage {
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.193);
+    border: 1px solid rgba(211, 211, 211, 0.193);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: gray;
+    width:72%;
+    margin-left: 38px;
+    border-radius: 4px;
+}

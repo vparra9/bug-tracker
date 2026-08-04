@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Meta data and page title-->
+    <title>Bug Tracker</title>
+    <!--External stylesheets-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Page Header-->
+    <header class="page-header">
+        <img src="images/bug.png" alt="Bug Tracker Logo" class="app-logo">
+        <h1 class="page-title">Bug Tracker</h1>
+    </header>
+
+    <!--Add New Bug Feature-->
+    <section class="add-bug">
+        <h3>Add New Bug</h3>
+        
+        <!--Create one form container to hold five groups-->
+
+        <!--Enter bug title-->
+        <form id="bugForm" class="bug-form">
+            <div class="form-group">
+                <label for="bugTitle">Bug Title</label>
+                <input
+                    type="text"
+                    id="bugTitle"
+                    placeholder="Enter bug title"
+                >
+            </div>
+        
+            <!--Enter bug description-->
+            <div class="form-group description-group">
+                <label for="bugDescription">Bug Description</label>
+                <textarea
+                    id="bugDescription"
+                    placeholder="Describe the bug.."
+                ></textarea>
+            </div>
+
+            <!--Bug Priority-->
+            <div class="form-group">
+                <label for="bugPriority">Priority</label>
+                <select id="bugPriority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <!--Bug Status-->
+            <div class="form-group">
+                <label for="bugStatus">Status</label>
+                <select id="bugStatus">
+                    <option value="open">Open</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="closed">Closed</option>
+                </select>
+            </div>
+
+        
+
+            <button type="submit">Add Bug</button>
+        
+        </form>
+    </section>
+
+    <!--Lists all bugs added by user with title, description, priority, status, creation date, and ID-->
+    <section class="all-bugs">
+        <h3>All Bugs</h3>
+        
+        <div class="filter-section">
+            <label for="statusFilter">Filter by status:</label>
+
+            <select id = "statusFilter">
+                <option value="all">All</option>
+                <option value="open">Open</option>
+                <option value="in-progress">In progress</option>
+                <option value="closed">Closed</option>
+            </select>
+        </div>
+
+        <!--When a user has not logged a bug this is the initial notice-->
+        <div id="bugList" class="bug-list">
+            <p id="emptyMessage">No bugs reported yet.</p>
+        </div>
+
+    </section>
+
+    <!--Scripts used-->
+    <script src="script.js"></script>
+</body>
+</html>
+
