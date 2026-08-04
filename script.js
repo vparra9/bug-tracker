@@ -7,7 +7,7 @@ const bugDescription = document.getElementById("bugDescription");
 const bugPriority = document.getElementById("bugPriority");
 const bugStatus = document.getElementById("bugStatus");
 const emptyMessage = document.getElementById("emptyMessage");
-
+const statusFilter = document.getElementById("statusFilter");
 
 bugForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -33,6 +33,8 @@ bugForm.addEventListener("submit", function (event) {
     const bugCard = document.createElement("div");
     bugCard.classList.add("bug-card");
 
+    bugCard.dataset.status = statusValue;
+
     bugCard.innerHTML = `
         <h3>${titleValue}</h3>
         <p>${descriptionValue}</p>
@@ -53,4 +55,21 @@ bugForm.addEventListener("submit", function (event) {
 
     bugList.appendChild(bugCard);
     bugForm.reset();
+});
+
+
+statusFilter.addEventListener("change", function () {
+    const selectedStatus = statusFilter.value;
+    const bugCards = document.querySelectorAll(".bug-card");
+
+     bugCards.forEach(function(card) {
+        if (
+            selectedStatus === "all" ||
+            card.dataset.status === selectedStatus
+        ) {
+         card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+     });
 });
